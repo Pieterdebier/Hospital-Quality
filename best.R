@@ -4,7 +4,8 @@ best <- function(state="IL", outcome="heart attack") {
         ## Return hospital name in that state with lowest 30-day death
         ## rate
         
-        DataSet<-read.csv("~/Hospital-Quality/data/outcome-of-care-measures.csv")
+        DataSet<-read.csv("~/Hospital-Quality/data/outcome-of-care-measures.csv",
+                          colClasses = "character")
         
         if (outcome=="heart attack") {
                 DataSet<-DataSet[,c("Hospital.Name", "State",
